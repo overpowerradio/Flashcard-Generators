@@ -1,0 +1,22 @@
+{
+  "name": "flashcard-generators",
+  "version": "1.0.0",
+  "description": "homework 11",
+  "main": "BasicCard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/overpowerradio/Flashcard-Generators.git"
+  },
+  "author": "William Carroll",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/overpowerradio/Flashcard-Generators/issues"
+  },
+  "homepage": "https://github.com/overpowerradio/Flashcard-Generators#readme",
+  "dependencies": {
+    "inquirer": "^3.2.0"
+  }
+}
