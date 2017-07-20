@@ -2,7 +2,7 @@ var inquirer = require("inquirer");
 var ClozeCard = require("./ClozeCard.js");
 var Basic = require("./Basic.js");
 
-
+//Changes Made
 var basicCards = [property, method, keys, values];
 var basicCount = basicCards.length;
 
@@ -19,6 +19,22 @@ var methodC = new ClozeCard("If a function is called an [.......], when it's apa
 var keysC = new ClozeCard("The propertes of an object are variables that we call [......] to which you will then assign a value to.", "Keys");
 
 
+
+ function clozelearning() {
+    if (clozeCount > 0) {
+    
+      inquirer.prompt([
+      {
+        name: "question",
+        message: propertyC.text.replace(propertyC.cloze, "....")
+      },
+        ]).then(function(answers) {
+        console.log("Full Text: " + propertyC.text);
+        clozeCount--;
+        clozelearning()
+        });
+    }  
+  }
 function basiclearning() {
 		if (basicCount > 0) {
 		
@@ -35,21 +51,7 @@ function basiclearning() {
 		}  
 	}
 
-  function clozelearning() {
-    if (basicCount > 0) {
-    
-      inquirer.prompt([
-      {
-        name: "question",
-        message: property.front
-      },
-        ]).then(function(answers) {
-        console.log("The correct answer is: " + property.back);
-        basicCount--;
-        basiclearning()
-        });
-    }  
-  }
+ 
 
 inquirer.prompt([
   {
@@ -73,9 +75,13 @@ inquirer.prompt([
   }
 ]).then(function (answers) {
 
-	if (this.answers = 'Basic Card') {
+	if (this.answers == 'Basic Card') {
 				basiclearning();
 	}
+
+  else {
+    clozelearning();
+  }
   // console.log(JSON.stringify(answers, null, '  '));
 });
 

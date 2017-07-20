@@ -1,5 +1,5 @@
-function ClozeCard(Text, cloze) {
-	this.text = fullText;
+function ClozeCard(text, cloze) {
+	this.text = text;
 	this.cloze = cloze;
 	}
 
