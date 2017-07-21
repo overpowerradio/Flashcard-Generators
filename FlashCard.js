@@ -2,7 +2,7 @@ var inquirer = require("inquirer");
 var ClozeCard = require("./ClozeCard.js");
 var Basic = require("./Basic.js");
 
-var property = new Basic("If a variable is apart of an object, what is it called?", "A property");
+var property = new Basic("If a variable is apart of an object , what is it called?", "A property");
 var method = new Basic("If a function is part of an object, what is it called?", "A method");
 var keys = new Basic("What do you call the name of the variables within an object?", "Keys");
 var values = new Basic("What is the other part of a key that makes up a property within an object?", "A value");
@@ -62,7 +62,7 @@ inquirer.prompt([
   {
     type: 'checkbox',
     message: 'Select Your Flash Card Style',
-    name: 'learning style',
+    name: 'style',
     choices: [
       {
         name: 'Basic Card'
@@ -80,11 +80,13 @@ inquirer.prompt([
   }
 ]).then(function (answers) {
 
-	if (this.answers = 'Basic Card') {
-				basiclearning();
+	if (answers.style == 'Basic Card') {
+				console.log("\n");
+        basiclearning();
 	}
 
-  else if (this.answers = 'Cloze Card') {
+  else {
+    console.log("\n");
     clozelearning();
   }
   // console.log(JSON.stringify(answers, null, '  '));
